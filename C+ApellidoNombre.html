@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend ~ Coder</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // Creo la clase Usuario
+    class Usuario{
+        constructor(nombre, apellido, libros, mascotas){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.libros = libros;
+            this.mascotas = mascotas;
+        }
+
+        getFullName (){
+            return `Nombre:  ${this.nombre}\nApellido: ${this.apellido}`
+        }
+
+        addMascota(mascota) {
+            return this.mascotas.push(mascota);
+        }
+        getMascotas () {
+            return this.mascotas.length;
+        }
+
+        addLibros(libro){
+            return this.libros.push(libro)
+        }
+        getLibros(){
+            return this.libros.length
+        }
+    }
+
+    let usuario_1 = new Usuario('Dylan', 'Losada', [{Autor: 'Stephen King', Nombre: 'Doctor Sueño'},
+    {Autor: 'Stephen King', Nombre: 'El Resplandor'}], ['Perro', 'Gato']);
+
+    usuario_1.addLibros({Autor: 'Felipe Pigna', Nombre: 'Los mitos de la historia argentina'});
+    usuario_1.addMascota('Mono');
+
+    usuario_1.getFullName();
+    usuario_1.getLibros();
+    usuario_1.getMascotas()
+</script>
+</html>
